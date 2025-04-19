@@ -1,0 +1,4 @@
+# Ignore the __pycache__ folder and its contents
+__pycache__/
+.vscode/
+.git/
