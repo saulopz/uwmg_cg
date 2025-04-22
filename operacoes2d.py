@@ -2,10 +2,12 @@ import pygame
 import copy
 from math import sin, cos, radians
 
+
 class Ponto:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, x: float, y: float):
+        self.x: float = x
+        self.y: float = y
+
 
 def draw(tela, figura, cor):
     size = len(figura)
@@ -17,10 +19,12 @@ def draw(tela, figura, cor):
             (figura[i].x, figura[i].y),
             (figura[j].x, figura[j].y), 1)
 
+
 def translacao(figura, tx, ty):
     for i in range(len(figura)):
         figura[i].x = figura[i].x + tx
         figura[i].y = figura[i].y + ty
+
 
 def escala(figura, sx, sy):
     pivo_x = figura[0].x
@@ -31,8 +35,10 @@ def escala(figura, sx, sy):
         figura[i].y = figura[i].y * sy
     translacao(figura, pivo_x, pivo_y)
 
+
 def rotacao(figura, ang):
-    ang = radians(ang)  # o angulo precisa ser em radianos
+    # o angulo precisa ser transformado em radianos
+    ang = radians(ang)
     pivo_x = figura[0].x
     pivo_y = figura[0].y
     translacao(figura, -pivo_x, -pivo_y)
@@ -42,6 +48,9 @@ def rotacao(figura, ang):
         figura[i].x = x2
         figura[i].y = y2
     translacao(figura, pivo_x, pivo_y)
+
+
+# PROGRAMA PRINCIPAL ------------------------------
 
 pygame.init()
 tela = pygame.display.set_mode((800, 600))
@@ -68,8 +77,11 @@ while rodando:
             rodando = False
     tela.fill((255, 255, 255))  # Fundo branco
     draw(tela, triangulo, (255, 0, 0))
-    draw(tela, t2, (0, 0, 255))
-    draw(tela, t3, (0, 0, 255))
-    draw(tela, t4, (0, 0, 255))
+
+    # Para ver uma operação específica, comente as demais
+    draw(tela, t2, (0, 0, 255))     # Triangulo transladado
+    draw(tela, t3, (0, 0, 255))     # Triangulo redimensionado
+    draw(tela, t4, (0, 0, 255))     # Triangulo rotacionado
+    
     pygame.display.flip()
 pygame.quit()

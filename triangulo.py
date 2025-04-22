@@ -1,12 +1,15 @@
+import sys
 import pygame
+
 
 class Point:
     def __init__(self, x: float, y: float):     # Nosso constructor do Ponto
         self.x: float = x                       # Inicializamos o x
         self.y: float = y                       # Inicializamos o y
 
+
 screen = pygame.display.set_mode((800, 600))    # Inicializamos o pygame
-triangle : list[Point] = [                      # Criamos nosso triângulo
+triangle: list[Point] = [                       # Criamos nosso triângulo
     Point(50, 100),                             # Primeiro ponto
     Point(100, 50),                             # Segundo ponto
     Point(150, 100)                             # Terceiro ponto
@@ -18,7 +21,7 @@ while True:                                     # Iniciamos o laço do gameloop
         elif event.type == pygame.KEYDOWN:      # Se uma tecla for pressionada
             if event.key == pygame.K_ESCAPE:    # E essa tecla for ESC
                 sys.exit(0)                     # Fechamos o programa
-    
+
     screen.fill((255, 255, 255))                # Pintamos o fundo de branco
 
     pygame.draw.line(screen, (0, 0, 0),         # Criamos nossa primeira linha
@@ -32,3 +35,5 @@ while True:                                     # Iniciamos o laço do gameloop
         (triangle[0].x, triangle[0].y))         # ao ponto 0
 
     pygame.display.flip()                       # Trocamos a página de desenho
+
+pygame.quit()                                   # Finaliza o pygame

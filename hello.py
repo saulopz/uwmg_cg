@@ -17,7 +17,7 @@ pygame.display.set_caption(filename)                # nome da imagem como títul
 finish = False                                      # flag para game loop continuar
 while not finish:                                   # enquanto não terminou
     # PROCESS_INPUT: é de responsabilidade da biblioteca
-    # EXECUTE: usa as entradas ou informações para fazer algo
+    # EXECUTE: usa as entradas ou informações para fazer tudo funcionar
     for event in pygame.event.get():                # verifica os eventos do pygame
         if event.type == pygame.QUIT:               # se clicou no botão [x]
             finish = True                           # ... fim do game loop
@@ -30,4 +30,3 @@ while not finish:                                   # enquanto não terminou
 
 # END: finaliza o game
 pygame.quit()                                       # finaliza o pygame
-quit()                                              # finaliza o programa
