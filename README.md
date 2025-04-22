@@ -11,3 +11,4 @@ Exemplos apresentados na aula de Computação Gráfica da disciplina de "Usabili
 - **testa_vetores.py**: testa a classe Vector do arquivo vector.py;
 - **triangulo.py e triangulo2d.py**: duas formas diferentes de criar triângulos no python;
 - **vector.py**: classe para gerenciamento de um vetor bidimensional no python.
+- **cubo3d.py**: exemplo de operações e perspectiva no espaço tridimensional.
